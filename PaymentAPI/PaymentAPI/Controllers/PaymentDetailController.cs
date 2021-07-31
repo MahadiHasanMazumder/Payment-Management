@@ -41,6 +41,8 @@ namespace PaymentAPI.Controllers
             return paymentDetail;
         }
 
+       
+
         // PUT: api/PaymentDetail/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -84,7 +86,7 @@ namespace PaymentAPI.Controllers
         }
 
         // DELETE: api/PaymentDetail/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeletePaymentDetail(int id)
         {
             var paymentDetail = await _context.PaymentDetail.FindAsync(id);
@@ -98,6 +100,21 @@ namespace PaymentAPI.Controllers
 
             return NoContent();
         }
+
+        //[HttpDelete("Delete2/{id}")]
+        //public async Task<IActionResult> DeletePaymentDetail(int id, PaymentDetail oitem)
+        //{
+        //    var paymentDetail = await _context.PaymentDetail.FindAsync(id);
+        //    if (paymentDetail == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _context.PaymentDetail.Remove(paymentDetail);
+        //    await _context.SaveChangesAsync();
+
+        //    return NoContent();
+        //}
 
         private bool PaymentDetailExists(int id)
         {
