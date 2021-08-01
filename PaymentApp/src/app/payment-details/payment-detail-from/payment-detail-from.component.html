@@ -1,20 +1,20 @@
 <form novalidate #form="ngForm" (submit)="onSubmit(form)">
-    <input type="hidden"name="PaymentDetailID"
-    [value]="service.formData.PaymentDetailID"/>
+    <input type="hidden"name="paymentDetailID"
+    [value]="service.formData.paymentDetailID"/>
 
 <div class="form-group">
     <label>CARD OWNER NAME</label>
     <input class="form-control form-control-lg" placeholder="Full Name" 
-    name="CardOwnerName" #CardOwnerName="ngModel"[(ngModel)]="service.formData.CardOwnerName"
-    required [class.invalid]="CardOwnerName.invalid && CardOwnerName.touched">
+    name="cardOwnerName" #cardOwnerName="ngModel"[(ngModel)]="service.formData.cardOwnerName"
+    required [class.invalid]="cardOwnerName.invalid && cardOwnerName.touched">
 
 </div>
 
 <div class="form-group">
     <label>CARD NUMBER</label>
     <input class="form-control form-control-lg" placeholder="16 Digit Card Number"
-    name="CardNumber" #CardNumber="ngModel"[(ngModel)]="service.formData.CardNumber"
-    required maxlength="16" minlength="16" [class.invalid]="CardNumber.invalid && CardNumber.touched"v>
+    name="cardNumber" #cardNumber="ngModel"[(ngModel)]="service.formData.cardNumber"
+    required maxlength="16" minlength="16" [class.invalid]="cardNumber.invalid && cardNumber.touched"v>
 
 </div>
 
@@ -22,16 +22,16 @@
 <div class="form-group col-md-6">
     <label>SECURITY CODE</label>
     <input type="password" class="form-control form-control-lg" placeholder="Security Code"
-    name="SecurityCode" #SecurityCode="ngModel"[(ngModel)]="service.formData.SecurityCode"
-    required maxlength="3" minlength="3" [class.invalid]="SecurityCode.invalid && SecurityCode.touched">
+    name="securityCode" #securityCode="ngModel"[(ngModel)]="service.formData.securityCode"
+    required maxlength="3" minlength="3" [class.invalid]="securityCode.invalid && securityCode.touched">
 
 </div>
 
 <div class="form-group col-md-6 ">
     <label>VALIDE THROUGH</label>
     <input class="form-control form-control-lg" placeholder="MM/YY"
-    name="ExpirationDate" #ExpirationDate="ngModel"[(ngModel)]="service.formData.ExpirationDate"
-    required maxlength="5" minlength="5" [class.invalid]="ExpirationDate.invalid && ExpirationDate.touched">
+    name="expirationDate" #expirationDate="ngModel"[(ngModel)]="service.formData.expirationDate"
+    required maxlength="5" minlength="5" [class.invalid]="expirationDate.invalid && expirationDate.touched">
 
 </div>
 </div>
